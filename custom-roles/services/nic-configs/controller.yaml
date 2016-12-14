@@ -114,6 +114,18 @@ resources:
                   addresses:
                     -
                       ip_netmask: {get_param: InternalApiIpSubnet}
+                -
+                  type: vlan
+                  vlan_id: {get_param: StorageNetworkVlanID}
+                  addresses:
+                    -
+                      ip_netmask: {get_param: StorageIpSubnet}
+                -
+                  type: vlan
+                  vlan_id: {get_param: StorageMgmtNetworkVlanID}
+                  addresses:
+                    -
+                      ip_netmask: {get_param: StorageMgmtIpSubnet}
             -
               type: ovs_bridge
               name: {get_input: bridge_name}

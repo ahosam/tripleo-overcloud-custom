@@ -10,6 +10,7 @@ Create the flavor:
 ```bash
 openstack flavor create --id auto --ram 4096 --disk 40 --vcpus 1 networker
 openstack flavor set  --property "capabilities:boot_option"="local" --property "capabilities:profile"="networker" networker
+openstack flavor list
 ```
 
 Associate the flavor with the node:

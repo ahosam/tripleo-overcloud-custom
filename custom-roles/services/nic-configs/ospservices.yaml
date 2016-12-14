@@ -110,22 +110,32 @@ resources:
                   primary: true
                 -
                   type: vlan
+                  device: eth0
                   vlan_id: {get_param: InternalApiNetworkVlanID}
                   addresses:
                     -
                       ip_netmask: {get_param: InternalApiIpSubnet}
                 -
                   type: vlan
+                  device: eth0
                   vlan_id: {get_param: StorageNetworkVlanID}
                   addresses:
                     -
                       ip_netmask: {get_param: StorageIpSubnet}
                 -
                   type: vlan
+                  device: eth0
                   vlan_id: {get_param: StorageMgmtNetworkVlanID}
                   addresses:
                     -
                       ip_netmask: {get_param: StorageMgmtIpSubnet}
+                -
+                  type: vlan
+                  device: eth0
+                  vlan_id: {get_param: TenantNetworkVlanID}
+                  addresses:
+                    -
+                      ip_netmask: {get_param: TenantIpSubnet}
             -
               type: ovs_bridge
               name: {get_input: bridge_name}
