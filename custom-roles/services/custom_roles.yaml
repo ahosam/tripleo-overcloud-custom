@@ -36,6 +36,8 @@
     - OS::TripleO::Services::SensuClient
     - OS::TripleO::Services::Snmp
     - OS::TripleO::Services::Timezone
+    - OS::TripleO::Services::TripleoFirewall
+    - OS::TripleO::Services::Keepalived
     - OS::TripleO::Services::VipHosts
 
 - name: Compute
@@ -133,7 +135,6 @@
     - OS::TripleO::Services::NeutronApi
     - OS::TripleO::Services::NeutronCorePlugin
     - OS::TripleO::Services::NeutronOvsAgent
-    - OS::TripleO::Services::Keepalived
     - OS::TripleO::Services::Memcached
     - OS::TripleO::Services::NovaConductor
     - OS::TripleO::Services::MongoDb
@@ -177,3 +178,4 @@
     - OS::TripleO::Services::OpenDaylightOvs
     - OS::TripleO::Services::SensuClient
     - OS::TripleO::Services::FluentdClient
+    - OS::TripleO::Services::VipHosts
