@@ -3,6 +3,43 @@ Set of templates to deploy a separate network role on a host.
 
 >NOTE: update network-environment.yaml to reference the absolute path of the configuration files in nic-configs
 
+## Networking Architecture
+These templates assume you are on a virtual environment with the following network layout
+
+```
+                                                      +---------+
+                                                      | gateway |
+                                                      +---------+
+                                                           |
+    +---------------------+                                |
+    |  Native  |  VLAN    |       +-----------+            |
+    +---------------------+       |    ctl    |      +----------+
+    | ctlplane | Storage  |       +-----------+      |  Native  |
+    |          +------------------+eth0 | eth1+-----------------+
+    |          | Internal |       +-----------+      | External |
+    +---------------------+                          +----------+
+                                                           |
+                                                           |
+    +---------------------+                                |
+    |  Native  |  VLAN    |       +-----------+            |
+    +---------------------+       |    net    |            |
+    | ctlplane | Tenant   |       +-----------+            |
+    |          +------------------+eth0 | eth1+------------+
+    |          | Internal |       +-----------+
+    +---------------------+
+
+
+    +---------------------+
+    |  Native  |  VLAN    |       +-----------+
+    +---------------------+       |    com    |
+    | ctlplane | Storage  |       +-----------+
+    |          +------------------+eth0 | eth1|
+    |          | Internal |       +-----------+
+    |          +----------+
+    |          | Tenant   |
+    +---------------------+
+```
+
 ## Prerequisites
 A flavor for the new role needs to be created and associated with node.
 
