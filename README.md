@@ -8,11 +8,15 @@ Set of templates to deploy a separate network role on a host.
 
 [Networking Role](custom-roles/networking)
 
-### services based role
+### Services based role
 Set of templates to deploy all the non-pacemaker controlled services on a host.
 
 [Services Role](custom-roles/services)
 
+### Complex Deployment with Services based role
+Set of templates to deploy all the non-pacemaker controlled services on a host.
+
+[Complex](custom-roles/complex)
 
 ## Troubleshooting:
 
